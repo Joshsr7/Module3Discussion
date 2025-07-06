@@ -1,39 +1,21 @@
-
-namespace Module3Assignment
+class Rectangle
 {
-    public class Student
+    public double Length;
+    public double Width;
+}
+
+class Program
+{
+    static void Main()
     {
-        public string Name;
-        public int ID;
-        public double GPA;
+        Rectangle r = new Rectangle();
+        r.Length = 5.8;
+        r.Width = 3.4;
 
-        public void DisplayInfo()
-        {
-            Console.WriteLine($"Name: {Name}");
-            Console.WriteLine($"ID: {ID}");
-            Console.WriteLine($"GPA: {GPA:F2}");
-        }
+        double area = r.Length * r.Width;
+        Console.WriteLine("Area as double: " + area);
 
-        public int GetRoundedGPA()
-        {
-            // Type casting example
-            return (int)GPA;
-        }
-    }
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Student student1 = new Student();
-            student1.Name = "Maya Rivera";
-            student1.ID = 2025;
-            student1.GPA = 3.67;
-
-            student1.DisplayInfo();
-
-            int roundedGPA = student1.GetRoundedGPA();
-            Console.WriteLine($"Rounded GPA (int): {roundedGPA}");
-        }
+        int areaAsInt = (int)area; // Type casting from double to int
+        Console.WriteLine("Area as int (after casting): " + areaAsInt);
     }
 }
